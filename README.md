@@ -34,6 +34,8 @@ Instead of comparing post-exercise samples to a single baseline only, the projec
 
 ![Signal-to-noise analysis](figures/signal_to_noise.png)
 
+> Note: Figures are included for portfolio and methodological presentation purposes. Raw participant-level data are not publicly available due to privacy and collaboration constraints.
+
 ## Data availability
 
 The original dataset cannot be shared publicly due to privacy and collaboration constraints.
