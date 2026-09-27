@@ -1,24 +1,37 @@
 # Noise-aware Capillary Metabolomics for Exercise Response Analysis
 
-This repository presents a portfolio version of my Master's thesis project on capillary blood metabolomics, cardiorespiratory fitness and acute exercise response.
+This repository presents a public portfolio version of my Master's thesis project on capillary blood metabolomics, cardiorespiratory fitness and acute exercise response.
 
 The original research project was carried out in collaboration with TU Dortmund and Biolyz, and focused on the analysis of repeated-baseline capillary blood metabolomics data collected around maximal cardiopulmonary exercise testing.
 
+The public version of this repository does **not** include raw biomedical data or participant-level datasets. Instead, it provides a clean and reproducible demonstration of the main methodological ideas using synthetic data.
+
+---
+
 ## Project overview
 
-The aim of the project was to investigate whether repeated-baseline capillary blood metabolomics can improve the interpretation of acute metabolic responses to exercise.
+Acute exercise metabolomics is often based on a single pre-exercise baseline measurement. However, this makes it difficult to determine whether post-exercise metabolite changes truly exceed short-term resting variability.
 
-Instead of comparing post-exercise samples to a single baseline only, the project used two pre-exercise baseline samples to estimate short-term baseline variability. This made it possible to interpret post-exercise metabolite changes in relation to methodological noise.
+This project addresses that limitation by using two pre-exercise baseline samples to estimate baseline-derived methodological noise. Post-exercise metabolite changes are then interpreted not only in terms of statistical significance, but also relative to short-term baseline variability.
 
-## Main analytical steps
+The main objective is to distinguish broad group-level metabolic perturbations from responses that more clearly exceed baseline noise.
 
-- Data preprocessing and quality control
-- Metabolite filtering and transformation
-- Baseline reliability analysis
-- Exploratory PCA and multivariate analysis
-- Signal-to-noise analysis of exercise-induced metabolite responses
-- Participant-level determinant analysis
-- VO₂peak prediction using regularized regression and nested cross-validation
+---
+
+## Main analytical components
+
+The original analysis workflow included:
+
+- metabolomics data preprocessing and quality control;
+- metabolite filtering and transformation;
+- repeated-baseline reliability analysis;
+- exploratory PCA and multivariate analysis;
+- single-baseline post-exercise response analysis;
+- signal-to-noise analysis of exercise-induced metabolite responses;
+- participant-level determinant analysis;
+- VO₂peak prediction using regularized regression and nested cross-validation.
+
+---
 
 ## Visual overview
 
@@ -30,22 +43,38 @@ Instead of comparing post-exercise samples to a single baseline only, the projec
 
 ![Baseline agreement](figures/baseline_agreement.png)
 
-### Noise-aware exercise response
+### Exercise-induced metabolomic shift
+
+![PCA by timepoint](figures/pca_timepoint.png)
+
+### Noise-aware response analysis
 
 ![Signal-to-noise analysis](figures/signal_to_noise.png)
 
 > Note: Figures are included for portfolio and methodological presentation purposes. Raw participant-level data are not publicly available due to privacy and collaboration constraints.
 
-## Data availability
+---
 
-The original dataset cannot be shared publicly due to privacy and collaboration constraints.
+## Repository structure
 
-This repository will therefore include:
-- reusable analysis code;
-- synthetic or simulated examples;
-- methodological explanations;
-- selected non-sensitive figures and summaries.
-
-## Status
-
-Work in progress.
+```text
+capillary-metabolomics-exercise-response/
+├── data/
+│   └── README.md
+├── figures/
+├── notebooks/
+│   ├── 01_noise_adjusted_metabolomics_demo.ipynb
+│   └── 02_vo2peak_prediction_demo.ipynb
+├── reports/
+│   └── project_summary.md
+├── scripts/
+│   └── run_synthetic_workflow.py
+├── src/
+│   ├── __init__.py
+│   ├── synthetic_data.py
+│   ├── reliability.py
+│   ├── response_analysis.py
+│   └── modeling.py
+├── README.md
+├── requirements.txt
+└── .gitignore
