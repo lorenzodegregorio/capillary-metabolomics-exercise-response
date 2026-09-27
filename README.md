@@ -20,6 +20,20 @@ Instead of comparing post-exercise samples to a single baseline only, the projec
 - Participant-level determinant analysis
 - VO₂peak prediction using regularized regression and nested cross-validation
 
+## Visual overview
+
+### Study design
+
+![Study design](figures/study_design.png)
+
+### Baseline reliability
+
+![Baseline agreement](figures/baseline_agreement.png)
+
+### Noise-aware exercise response
+
+![Signal-to-noise analysis](figures/signal_to_noise.png)
+
 ## Data availability
 
 The original dataset cannot be shared publicly due to privacy and collaboration constraints.
